@@ -18,6 +18,7 @@ workflows:
     publishing:
       app_store_connect:
         auth: integration
-  
-
+        bundle_id: com.sai.helloApp
+        apple_team_id: 5MA8L86L83
+        submit_to_testflight: true
         
