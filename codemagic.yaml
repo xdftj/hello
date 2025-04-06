@@ -5,8 +5,7 @@ workflows:
       ios_signing:
         distribution_type: app_store
         bundle_identifier: com.sai.helloApp
-      groups:
-        -ios 
+      groups: [-ios] 
       flutter: stable
       xcode: latest
     integrations:
