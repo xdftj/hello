@@ -3,24 +3,20 @@ workflows:
     name: iOS Release
     environment:
       ios_signing:
+        distribution_type: app_store
         bundle_identifier: com.sai.helloApp
       flutter: stable
       xcode: latest
     integrations:
-      app_store_connect: Codemagic  
-    vars:
-      CM_AUTO_SIGN: true
+      app_store_connect: Codemagic
     scripts:
-      - name: use profiles
-        script: xcode-project use-profiles
       - name: Get dependencies
         script: flutter pub get
       - name: Build iOS
-        script: flutter build ipa
+        script: flutter build ipa --release
     artifacts:
       - build/ios/ipa/*.ipa
     publishing:
       app_store_connect:
         auth: integration
         submit_to_testflight: true
-        
