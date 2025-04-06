@@ -14,6 +14,5 @@ workflows:
       - build/ios/ipa/*.ipa
     publishing:
       app_store_connect:
-        apple_id: cmscameron12@gmail.com
-        password: Encrypted(APP_SPECIFIC_PASSWORD)
+        credentials: Codemagic   # 👈 Must match the nickname exactly
         submit_to_testflight: true
