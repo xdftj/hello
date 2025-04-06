@@ -4,7 +4,6 @@ workflows:
     environment:
       flutter: stable
       xcode: latest
-      cocoapods: latest
       vars:
         CM_AUTO_SIGN: true
     integrations:
