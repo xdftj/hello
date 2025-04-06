@@ -16,8 +16,8 @@ workflows:
     publishing:
       app_store_connect:
         api_key:
-          key_id: R9B224UPGS
-          issuer_id: 9b674f34-b80b-45dc-87b0-a26e391538da
+          key_id: "R9B224UPGS"
+          issuer_id: "9b674f34-b80b-45dc-87b0-a26e391538da"
           key: |
             -----BEGIN PRIVATE KEY-----
             MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgs2NxOaVtqQ83J8od
