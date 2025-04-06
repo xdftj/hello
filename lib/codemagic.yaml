@@ -1,0 +1,32 @@
+workflows:
+  ios-release:
+    name: iOS Release
+    environment:
+      vars:
+        FLUTTER_VERSION: stable
+      flutter: $FLUTTER_VERSION
+      xcode: latest
+      cocoapods: default
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: main
+          include: true
+    scripts:
+      - name: Install Flutter dependencies
+        script: |
+          flutter pub get
+      - name: Build iOS release
+        script: |
+          flutter build ios --release --no-codesign
+    artifacts:
+      - build/ios/ipa/*.ipa
+    publishing:
+      app_store_connect:
+        api_key: 
+          key_id: R9B224UPGS
+          issuer_id: 9b674f34-b80b-45dc-87b0-a26e391538da
+          key: $APP_STORE_API_KEY
+        bundle_id: com.sai.helloApp
+        submit_to_testflight: true
