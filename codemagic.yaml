@@ -1,8 +1,9 @@
 workflows:
   ios-release:
     name: iOS Release Workflow
-    max_build_duration: 60
     environment:
+      groups:
+        - app_store_credentials
       flutter: stable
       xcode: latest
       cocoapods: default
@@ -16,13 +17,7 @@ workflows:
     publishing:
       app_store_connect:
         api_key:
-          key_id: "R9B224UPGS"
-          issuer_id: "9b674f34-b80b-45dc-87b0-a26e391538da"
-          key: |
-            -----BEGIN PRIVATE KEY-----
-            MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgs2NxOaVtqQ83J8od
-            BRuinFjmSxP0OhbOahk2KV05fomgCgYIKoZIzj0DAQehRANCAARcWfSouJZVLNWT
-            lWMGAs6CjVrVwlo5eZXfEuXjb1DtZoYiFD9UFfHBmspsJ6Ft0SvnZ/fheMu0ON8X
-            Hee+GwKy
-            -----END PRIVATE KEY-----
+          key_id: $APP_STORE_KEY_ID
+          issuer_id: $APP_STORE_ISSUER_ID
+          key: $APP_STORE_API_KEY
         submit_to_testflight: true
