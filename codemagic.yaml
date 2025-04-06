@@ -5,8 +5,6 @@ workflows:
       ios_signing:
         distribution_type: app_store
         bundle_identifier: com.sai.helloApp
-      groups: 
-        - ios 
       flutter: stable
       xcode: latest
     integrations:
@@ -20,8 +18,6 @@ workflows:
       - build/ios/ipa/*.ipa
     publishing:
       app_store_connect:
-        api_key: $APP_STORE_API_KEY
-        key_id: $APP_STORE_KEY_ID
-        issuer_id: $APP_STORE_ISSUER_ID
+        auth: integration
         submit_to_testflight: true
         
