@@ -17,7 +17,12 @@ workflows:
     publishing:
       app_store_connect:
         api_key:
-          key_id: $APP_STORE_KEY_ID
+          key_id: -----BEGIN PRIVATE KEY-----
+                  MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgs2NxOaVtqQ83J8od
+                  BRuinFjmSxP0OhbOahk2KV05fomgCgYIKoZIzj0DAQehRANCAARcWfSouJZVLNWT
+                  lWMGAs6CjVrVwlo5eZXfEuXjb1DtZoYiFD9UFfHBmspsJ6Ft0SvnZ/fheMu0ON8X
+                  Hee+GwKy
+                  -----END PRIVATE KEY-----
           issuer_id: $APP_STORE_ISSUER_ID
           key: $APP_STORE_API_KEY
         submit_to_testflight: true
