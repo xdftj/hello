@@ -2,6 +2,8 @@ workflows:
   ios-release:
     name: iOS Release
     environment:
+      groups:
+        - ios
       vars:
         FLUTTER_VERSION: stable
       flutter: $FLUTTER_VERSION
