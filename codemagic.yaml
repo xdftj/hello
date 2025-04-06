@@ -4,15 +4,13 @@ workflows:
     environment:
       flutter: stable
       xcode: latest
-      vars:
-        CM_AUTO_SIGN: true
     integrations:
       app_store_connect: Codemagic  
     scripts:
       - name: Get dependencies
         script: flutter pub get
       - name: Build iOS
-        script: flutter build ipa --release
+        script: flutter build ipa --release --nocodesign
     artifacts:
       - build/ios/ipa/*.ipa
     publishing:
