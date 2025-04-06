@@ -10,10 +10,11 @@ workflows:
     integrations:
       app_store_connect: Codemagic  
     scripts:
+      - script: xcode-project use-profiles
       - name: Get dependencies
         script: flutter pub get
-      - name: Build iOS
-        script: flutter build ipa
+      -  name: Flutter
+         script: xcode-project use-profiles
     artifacts:
       - build/ios/ipa/*.ipa
     publishing:
