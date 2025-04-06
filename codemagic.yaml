@@ -10,6 +10,8 @@ workflows:
     integrations:
       app_store_connect: Codemagic
     scripts:
+      - name: Clean the build
+        script: flutter clean
       - name: Get dependencies
         script: flutter pub get
       - name: Build iOS
