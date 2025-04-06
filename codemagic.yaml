@@ -9,6 +9,8 @@ workflows:
       xcode: latest
     integrations:
       app_store_connect: Codemagic  
+    vars:
+        CM_AUTO_SIGN: true
     scripts:
       - name: use profiles
         script: xcode-project use-profiles
